@@ -88,7 +88,7 @@ export function About() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=800&fit=crop"
+                  src="https://images.pexels.com/photos/10963692/pexels-photo-10963692.jpeg"
                   alt="Agriculture"
                   className="w-full h-full object-cover"
                 />

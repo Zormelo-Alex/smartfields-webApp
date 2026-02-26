@@ -1,7 +1,14 @@
-import { Link } from 'react-router';
-import { Scan, TrendingUp, Users, Leaf, ArrowRight, CheckCircle } from 'lucide-react';
-import { motion } from 'motion/react';
-import { useAuth } from '../contexts/AuthContext';
+import { Link } from "react-router";
+import {
+  Scan,
+  TrendingUp,
+  Users,
+  Leaf,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+import { motion } from "motion/react";
+import { useAuth } from "../contexts/AuthContext";
 
 export function Home() {
   const { isAuthenticated } = useAuth();
@@ -9,26 +16,28 @@ export function Home() {
   const features = [
     {
       icon: Scan,
-      title: 'AI-Powered Scanning',
-      description: 'Instantly diagnose plant deficiencies with our advanced leaf scanning technology'
+      title: "AI-Powered Scanning",
+      description:
+        "Instantly diagnose plant deficiencies with our advanced leaf scanning technology",
     },
     {
       icon: TrendingUp,
-      title: 'Expert Remedies',
-      description: 'Get actionable solutions and treatment plans tailored to your plants'
+      title: "Expert Remedies",
+      description:
+        "Get actionable solutions and treatment plans tailored to your plants",
     },
     {
       icon: Users,
-      title: 'Community Driven',
-      description: 'Share findings, learn from others, and grow together'
-    }
+      title: "Community Driven",
+      description: "Share findings, learn from others, and grow together",
+    },
   ];
 
   const benefits = [
-    'Accurate plant health diagnosis in seconds',
-    'Comprehensive remedy recommendations',
-    'Track your scan history and progress',
-    'Join a community of passionate farmers'
+    "Accurate plant health diagnosis in seconds",
+    "Comprehensive remedy recommendations",
+    "Track your scan history and progress",
+    "Join a community of passionate farmers",
   ];
 
   return (
@@ -36,9 +45,9 @@ export function Home() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/30">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1758614032436-e06e9a506bc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwZ3JlZW4lMjBwbGFudCUyMGxlYXZlcyUyMGFncmljdWx0dXJlfGVufDF8fHx8MTc3MjA5NjQwMnww&ixlib=rb-4.1.0&q=80&w=1080')] bg-cover bg-center opacity-5"></div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -46,17 +55,21 @@ export function Home() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
               <Leaf className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary">AI-Powered Plant Health Analysis</span>
+              <span className="text-sm text-primary">
+                AI-Powered Plant Health Analysis
+              </span>
             </div>
-            
+
             <h1 className="text-5xl sm:text-6xl lg:text-7xl mb-6 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
               Diagnose Plant Health
               <br />
               <span className="text-primary">In Seconds</span>
             </h1>
-            
+
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Scan leaves, get instant diagnosis, and discover expert remedies. Join thousands of farmers improving their crop health with SmartFields.
+              Scan leaves, get instant diagnosis, and discover expert remedies.
+              Join thousands of farmers improving their crop health with
+              SmartFields.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -68,7 +81,7 @@ export function Home() {
                 Scan a Leaf
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              
+
               <Link
                 to="/blog"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-foreground rounded-xl hover:bg-secondary transition-colors border border-border"
@@ -99,7 +112,8 @@ export function Home() {
               <span className="text-primary"> Healthy Crops</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Powerful features designed to help you maintain optimal plant health
+              Powerful features designed to help you maintain optimal plant
+              health
             </p>
           </motion.div>
 
@@ -117,7 +131,9 @@ export function Home() {
                   <feature.icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-2xl mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -144,9 +160,21 @@ export function Home() {
 
               <div className="space-y-6">
                 {[
-                  { step: '01', title: 'Scan the Leaf', desc: 'Take a photo or upload an image of the affected plant' },
-                  { step: '02', title: 'Get Diagnosis', desc: 'Our AI analyzes and identifies nutrient deficiencies' },
-                  { step: '03', title: 'Apply Solutions', desc: 'Follow expert remedies to restore plant health' }
+                  {
+                    step: "01",
+                    title: "Scan the Leaf",
+                    desc: "Take a photo or upload an image of the affected plant",
+                  },
+                  {
+                    step: "02",
+                    title: "Get Diagnosis",
+                    desc: "Our AI analyzes and identifies nutrient deficiencies",
+                  },
+                  {
+                    step: "03",
+                    title: "Apply Solutions",
+                    desc: "Follow expert remedies to restore plant health",
+                  },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -185,7 +213,7 @@ export function Home() {
             >
               <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/10963692/pexels-photo-10963692.jpeg"
+                  src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=800&fit=crop"
                   alt="Farmer inspecting crops"
                   className="w-full h-full object-cover"
                 />
@@ -251,9 +279,16 @@ export function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-primary to-accent relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii4wNSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9nPjwvc3ZnPg==')] opacity-30"></div>
-        
+      <section
+        className="relative py-24 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1592841200221-a6898f307baa?w=1600&h=900&fit=crop')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -265,9 +300,10 @@ export function Home() {
               Ready to Transform Your Farming?
             </h2>
             <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
-              Start diagnosing plant health issues today and join our growing community
+              Start diagnosing plant health issues today and join our growing
+              community
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/scan"
@@ -276,7 +312,7 @@ export function Home() {
                 <Scan className="w-5 h-5" />
                 Start Scanning
               </Link>
-              
+
               {!isAuthenticated && (
                 <Link
                   to="/login"

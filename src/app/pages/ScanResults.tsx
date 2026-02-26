@@ -27,45 +27,11 @@ export function ScanResults() {
     }
   }, [navigate]);
 
+  /*
   const getRemedies = (diagnosis: string): string[] => {
-    const remediesMap: Record<string, string[]> = {
-      'Nitrogen Deficiency': [
-        'Apply nitrogen-rich fertilizer (10-5-5 NPK ratio)',
-        'Add compost or aged manure to soil',
-        'Use fish emulsion as a quick nitrogen boost',
-        'Ensure proper watering to help nutrient absorption',
-        'Consider planting nitrogen-fixing cover crops'
-      ],
-      'Iron Deficiency': [
-        'Apply chelated iron supplement to soil',
-        'Lower soil pH if too alkaline (target 6.0-6.5)',
-        'Add sulfur to acidify soil gradually',
-        'Improve drainage to prevent nutrient lockout',
-        'Use foliar spray for quick results'
-      ],
-      'Phosphorus Deficiency': [
-        'Apply phosphorus-rich fertilizer (5-10-5 NPK)',
-        'Add bone meal to soil',
-        'Test and adjust soil pH to 6.0-7.0',
-        'Ensure soil temperature is adequate (above 55°F)',
-        'Reduce soil compaction for better root growth'
-      ],
-      'Potassium Deficiency': [
-        'Apply potassium-rich fertilizer (0-0-10 NPK)',
-        'Add wood ash to soil (use sparingly)',
-        'Use kelp meal as an organic option',
-        'Improve soil drainage and aeration',
-        'Mulch to maintain consistent soil moisture'
-      ]
-    };
-
-    return remediesMap[diagnosis] || [
-      'Consult with a local agricultural expert',
-      'Test your soil for nutrient levels',
-      'Ensure proper watering schedule',
-      'Monitor plant progress regularly'
-    ];
+    // original remedies logic commented out
   };
+  */
 
   const handleSaveToHistory = () => {
     if (!result || !user) return;
@@ -75,7 +41,7 @@ export function ScanResults() {
       plantName: result.plantName,
       diagnosis: result.diagnosis,
       image: result.image,
-      remedies: getRemedies(result.diagnosis),
+      remedies: [], // empty for now
       createdAt: new Date(),
       postedAsBlog: false
     };
@@ -92,15 +58,14 @@ export function ScanResults() {
       navigate('/login', { state: { from: '/scan/results' } });
       return;
     }
-    
-    // Store result data for post creation
+
     sessionStorage.setItem('postDraft', JSON.stringify({
       plantName: result?.plantName,
       diagnosis: result?.diagnosis,
       image: result?.image,
-      remedies: getRemedies(result?.diagnosis || '')
+      remedies: [] // empty for now
     }));
-    
+
     navigate('/create-post');
   };
 
@@ -111,8 +76,6 @@ export function ScanResults() {
       </div>
     );
   }
-
-  const remedies = getRemedies(result.diagnosis);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-secondary/20 to-white">
@@ -134,11 +97,12 @@ export function ScanResults() {
           <div className="bg-white rounded-2xl overflow-hidden shadow-xl">
             {/* Image */}
             <div className="relative aspect-[16/9] bg-secondary">
-              <img
+              {/* Uncomment when ready to show scanned image */}
+              {/* <img
                 src={result.image}
                 alt="Scanned leaf"
                 className="w-full h-full object-contain"
-              />
+              /> */}
             </div>
 
             {/* Content */}
@@ -154,8 +118,9 @@ export function ScanResults() {
                 </div>
               </div>
 
-              {/* Diagnosis */}
               <div className="space-y-6">
+                {/* Uncomment when ready to show plant & diagnosis */}
+                {/*
                 <div className="p-6 bg-secondary rounded-xl">
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="flex-1">
@@ -176,26 +141,13 @@ export function ScanResults() {
                     </div>
                   </div>
                 </div>
+                */}
 
-                {/* Remedies */}
-                <div>
-                  <h3 className="text-2xl mb-4">Recommended Remedies</h3>
-                  <div className="space-y-3">
-                    {remedies.map((remedy, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: index * 0.1 }}
-                        className="flex items-start gap-3 p-4 bg-secondary rounded-lg"
-                      >
-                        <div className="flex-shrink-0 w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm">
-                          {index + 1}
-                        </div>
-                        <p className="flex-1 text-muted-foreground">{remedy}</p>
-                      </motion.div>
-                    ))}
-                  </div>
+                {/* Placeholder for remedies / coming soon */}
+                <div className="p-6 bg-secondary rounded-xl text-center">
+                  <p className="text-xl text-muted-foreground">
+                    Scan results and remedies will be available soon.
+                  </p>
                 </div>
 
                 {/* Actions */}
