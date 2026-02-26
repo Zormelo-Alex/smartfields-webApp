@@ -31,13 +31,13 @@ export function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
-      link: "tel:+15551234567",
+      content: "+233 (000) 000-000",
+      link: "tel:+233553926202",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Agriculture Ave, Farm City, FC 12345",
+      content: "Ho, Volta Region - Ghana",
       link: null,
     },
   ];
