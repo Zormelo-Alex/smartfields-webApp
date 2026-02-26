@@ -72,7 +72,7 @@ export function About() {
                   identify plant nutrient deficiencies in seconds.
                 </p>
                 <p>
-                  Today, SmartFields serves thousands of farmers worldwide, helping them make 
+                  Today, SmartFields aims to serves thousands of farmers worldwide, helping them make 
                   informed decisions about plant care and improving crop yields through 
                   early detection and treatment.
                 </p>
