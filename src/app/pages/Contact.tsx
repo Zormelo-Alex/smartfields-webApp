@@ -65,7 +65,7 @@ export function Contact() {
           >
             <h1 className="text-5xl sm:text-6xl mb-6 text-white">
               Get in
-              <span className="text-primary"> Touch</span>
+              <span className="text-white"> Touch</span>
             </h1>
 
             <p className="text-xl text-white/90">
