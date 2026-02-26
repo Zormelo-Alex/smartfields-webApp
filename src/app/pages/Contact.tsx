@@ -1,13 +1,13 @@
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
-import { motion } from 'motion/react';
-import { useState } from 'react';
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { motion } from "motion/react";
+import { useState } from "react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -17,49 +17,60 @@ export function Contact() {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     }, 3000);
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email Us',
-      content: 'support@smartfields.com',
-      link: 'mailto:support@smartfields.com'
+      title: "Email Us",
+      content: "support@smartfields.com",
+      link: "mailto:support@smartfields.com",
     },
     {
       icon: Phone,
-      title: 'Call Us',
-      content: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      title: "Call Us",
+      content: "+1 (555) 123-4567",
+      link: "tel:+15551234567",
     },
     {
       icon: MapPin,
-      title: 'Visit Us',
-      content: '123 Agriculture Ave, Farm City, FC 12345',
-      link: null
-    }
+      title: "Visit Us",
+      content: "123 Agriculture Ave, Farm City, FC 12345",
+      link: null,
+    },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-secondary to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-24 overflow-hidden">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/5333680/pexels-photo-5333680.jpeg')",
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black/75"></div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl sm:text-6xl mb-6">
+            <h1 className="text-5xl sm:text-6xl mb-6 text-white">
               Get in
               <span className="text-primary"> Touch</span>
             </h1>
-            
-            <p className="text-xl text-muted-foreground">
-              Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+
+            <p className="text-xl text-white/90">
+              Have questions? We'd love to hear from you. Send us a message and
+              we'll respond as soon as possible.
             </p>
           </motion.div>
         </div>
@@ -83,7 +94,10 @@ export function Contact() {
                 </div>
                 <h3 className="text-xl mb-2">{info.title}</h3>
                 {info.link ? (
-                  <a href={info.link} className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={info.link}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {info.content}
                   </a>
                 ) : (
@@ -102,24 +116,30 @@ export function Contact() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-3xl mb-6">Send us a Message</h2>
-              
+
               {submitted ? (
                 <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl text-center">
                   <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                     <Send className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl mb-2">Message Sent!</h3>
-                  <p className="text-muted-foreground">We'll get back to you soon.</p>
+                  <p className="text-muted-foreground">
+                    We'll get back to you soon.
+                  </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block mb-2">Name</label>
+                    <label htmlFor="name" className="block mb-2">
+                      Name
+                    </label>
                     <input
                       type="text"
                       id="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                       required
                       className="w-full px-4 py-3 rounded-lg bg-input-background border border-border focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="Your name"
@@ -127,12 +147,16 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block mb-2">Email</label>
+                    <label htmlFor="email" className="block mb-2">
+                      Email
+                    </label>
                     <input
                       type="email"
                       id="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                       required
                       className="w-full px-4 py-3 rounded-lg bg-input-background border border-border focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="your@email.com"
@@ -140,12 +164,16 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block mb-2">Subject</label>
+                    <label htmlFor="subject" className="block mb-2">
+                      Subject
+                    </label>
                     <input
                       type="text"
                       id="subject"
                       value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, subject: e.target.value })
+                      }
                       required
                       className="w-full px-4 py-3 rounded-lg bg-input-background border border-border focus:outline-none focus:ring-2 focus:ring-primary"
                       placeholder="How can we help?"
@@ -153,11 +181,15 @@ export function Contact() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block mb-2">Message</label>
+                    <label htmlFor="message" className="block mb-2">
+                      Message
+                    </label>
                     <textarea
                       id="message"
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                       required
                       rows={6}
                       className="w-full px-4 py-3 rounded-lg bg-input-background border border-border focus:outline-none focus:ring-2 focus:ring-primary resize-none"
