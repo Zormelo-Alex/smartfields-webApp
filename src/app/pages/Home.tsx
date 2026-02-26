@@ -44,7 +44,11 @@ export function Home() {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-secondary via-white to-secondary/30">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1758614032436-e06e9a506bc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwZ3JlZW4lMjBwbGFudCUyMGxlYXZlcyUyMGFncmljdWx0dXJlfGVufDF8fHx8MTc3MjA5NjQwMnww&ixlib=rb-4.1.0&q=80&w=1080')] bg-cover bg-center opacity-5"></div>
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1758614032436-e06e9a506bc8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxoZWFsdGh5JTIwZ3JlZW4lMjBwbGFudCUyMGxlYXZlcyUyMGFncmljdWx0dXJlfGVufDF8fHx8MTc3MjA5NjQwMnww&ixlib=rb-4.1.0&q=80&w=1080')] bg-cover bg-center"></div>
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/80"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <motion.div
@@ -54,19 +58,19 @@ export function Home() {
             className="text-center max-w-4xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
-              <Leaf className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary">
+              <Leaf className="w-4 h-4 text-white" />
+              <span className="text-sm text-white">
                 AI-Powered Plant Health Analysis
               </span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl mb-6 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl mb-6 bg-gradient-to-br from-foreground via-foreground to-foreground/70 bg-clip-text text-white">
               Diagnose Plant Health
               <br />
-              <span className="text-primary">In Seconds</span>
+              <span className="text-white">In Seconds</span>
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
               Scan leaves, get instant diagnosis, and discover expert remedies.
               Join thousands of farmers improving their crop health with
               SmartFields.
